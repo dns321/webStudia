@@ -1,0 +1,71 @@
+/*Стилі героя*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+
+  background-image: linear-gradient(to right, $bd-hero, $bd-hero),
+    url(../images/Header_mobile@1x.jpg);
+  background-color: $bg-footer;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 480px 400px;
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url(../images/Header_mobile@2x.jpg);
+  }
+
+  @media screen and (min-width: 481px) {
+    background-image: url(../images/Header_tablet@1x.jpg);
+    background-size: 768px 400px;
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../images/Header_tablet@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    background-image: url(../images/Header_desctop@1x.jpg);
+    background-size: 1600px 600px;
+
+    height: 600px;
+    max-width: 1600px;
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../images/Header_desctop@2x.jpg);
+    }
+  }
+}
+
+.hero-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  color: $secondary-color;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $desctop) {
+    font-size: 44px;
+  }
+}
+
+.hero-title,
+.button.primary,
+.works-title {
+  letter-spacing: 0.06em;
+}

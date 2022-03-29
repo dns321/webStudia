@@ -1,0 +1,26 @@
+%title {
+  color: $titel-text-color;
+  margin-bottom: 10px;
+}
+
+%social-stile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  color: $color-social;
+
+  transition: $animation;
+}
+
+%input-text-stile {
+  margin: 4px 0 0;
+  padding: 12px 12px 12px 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: $animation;
+}

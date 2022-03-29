@@ -1,0 +1,129 @@
+/*Cnbks aenthf*/
+.footer {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: $desctop) {
+    text-align: start;
+  }
+}
+
+.footer-title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $secondary-color;
+}
+
+.footer-adress {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.address-text {
+  margin-top: 0;
+  color: $secondary-color;
+}
+
+.address-mail,
+.address-phone {
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+
+.address-mail,
+.address-text {
+  margin-bottom: 8px;
+}
+
+.address-phone {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+}
+
+.footer-submit {
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  padding-left: 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  // margin-right: 12px;
+  background-color: transparent;
+
+  @media screen and (min-width: $desctop) {
+    width: 358px;
+    margin-right: 12px;
+    margin-bottom: 0;
+  }
+}
+
+.footer-submit-svg {
+  position: relative;
+  top: 6px;
+  left: 10px;
+  fill: currentColor;
+}
+
+.footer-elements input::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-tablet {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: $desctop) {
+    margin-bottom: 0;
+  }
+}
+
+.footer-elements.address {
+  @media screen and (min-width: $tablet) {
+    margin-right: 165px;
+  }
+  @media screen and (min-width: $desctop) {
+    margin-right: 70px;
+  }
+}
+
+.footer-elements {
+  @media screen and (min-width: $tablet) and (max-width: 1599px) {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.container.footer {
+  @media screen and (min-width: $desctop) {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.subscription {
+  @media screen and (min-width: $desctop) {
+    margin-left: auto;
+  }
+}
+
+.form-footer {
+  @media screen and (min-width: $desctop) {
+    display: flex;
+  }
+}

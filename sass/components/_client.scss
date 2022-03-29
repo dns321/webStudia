@@ -1,0 +1,42 @@
+/*Стилі клієнтів*/
+.client-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.client-item {
+  width: calc((100% - (4 * 15px)) / 2);
+  text-align: center;
+  margin: 15px;
+
+  @media screen and (min-width: $tablet) {
+    width: calc((100% - (6 * 15px)) / 3);
+  }
+
+  @media screen and (min-width: $desctop) {
+    width: calc((100% - (12 * 15px)) / 6);
+  }
+}
+
+.client-item-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  border: 1px solid $color-social;
+  color: $color-social;
+  transition: $animation;
+
+  @media screen and (min-width: $desctop) {
+    &:hover,
+    &:focus {
+      color: $accent-color;
+      border: 1px solid $accent-color;
+    }
+  }
+}
+
+.icon-client {
+  fill: currentColor;
+}

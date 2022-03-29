@@ -1,0 +1,62 @@
+/*Стилі команди*/
+.team-items {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+}
+
+.team-item {
+  max-width: 100%;
+  padding-bottom: 24px;
+  margin-bottom: 30px;
+  background-color: $secondary-color;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 0px 0px 4px 4px;
+  &:last-child {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 0;
+    }
+  }
+  // width: calc((100% - (3 * 30px)) / 4);
+
+  @media screen and (min-width: $tablet) {
+    width: calc((100% - (4 * 15px)) / 2);
+    margin: 15px;
+  }
+
+  @media screen and (min-width: $desctop) {
+    width: calc((100% - (8 * 15px)) / 4);
+  }
+}
+
+.team-img {
+  display: block;
+  width: 450px;
+  margin-bottom: 30px;
+  max-width: 100%;
+  height: auto;
+}
+
+.section.team {
+  background-color: $secondary-bg-color;
+}
+
+.team-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.18;
+  text-align: center;
+  @extend %title;
+}
+
+.team-text {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.18;
+  text-align: center;
+}

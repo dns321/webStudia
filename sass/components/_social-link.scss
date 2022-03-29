@@ -1,0 +1,57 @@
+/* Оформлення соц мереж */
+
+.team-social,
+.footer-social {
+  display: flex;
+  justify-content: center;
+}
+
+.social-link {
+  fill: currentColor;
+}
+
+.team-social-inst,
+.team-social-twit,
+.team-social-facebook,
+.footer-social-inst,
+.footer-social-twit,
+.footer-social-facebook {
+  margin-right: 10px;
+}
+
+.team-social-item {
+  @extend %social-stile;
+
+  @media screen and (min-width: $desctop) {
+    &:hover,
+    &:focus {
+      background-color: $accent-color;
+      color: $secondary-color;
+    }
+  }
+}
+
+.footer-social-item {
+  @extend %social-stile;
+}
+
+.footer-social-item {
+  background-color: $bg-soc-footer;
+
+  @media screen and (min-width: $desctop) {
+    &:hover,
+    &:focus {
+      background-color: $accent-color;
+    }
+  }
+}
+
+.social-link-footer {
+  fill: $secondary-color;
+}
+
+.footer-social {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+}

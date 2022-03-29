@@ -1,0 +1,27 @@
+/* Головний файл стилів*/
+
+/*Шрифт*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap");
+
+/*Утіліти*/
+@import "./utils/variables";
+@import "./utils/placeholder";
+@import "./utils/breakpoint";
+
+/*Базові*/
+@import "./base/normalise";
+@import "./base/base";
+
+/*Компоненти*/
+@import "./components/logo";
+@import "./components/header";
+@import "./components/hero";
+@import "./components/button";
+@import "./components/modal";
+@import "./components/feature";
+@import "./components/work";
+@import "./components/team";
+@import "./components/social-link";
+@import "./components/client";
+@import "./components/portfolio";
+@import "./components/footer";

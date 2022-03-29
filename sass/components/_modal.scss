@@ -1,0 +1,240 @@
+/*Стилі модального вікна*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $bg-backdrop;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 93px 15px 94px 15px;
+  overflow-y: scroll;
+
+  @media screen and (min-width: $tablet) and (max-width: 1599px) {
+    right: 0;
+    padding: 208px 159px 207px 159px;
+  }
+
+  @media screen and (min-width: $desctop) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(0%, 0%) scale(0);
+}
+
+.backdrop-close-modal {
+  width: 100%;
+  height: 100%;
+}
+
+.cloсe {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $secondary-color;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  /* Псевдоєлемент крестик */
+  &::before,
+  &::after {
+    position: absolute;
+    content: " ";
+
+    height: 15px;
+    width: 2px;
+    background-color: black;
+
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover.cloсe::before,
+  &:hover.cloсe::after {
+    background-color: $accent-color;
+  }
+}
+
+.modal {
+  position: relative;
+  padding: 40px;
+  background: $secondary-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transition: $animation;
+
+  @media screen and (min-width: $desctop) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 528px;
+    min-height: 581px;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.title-modal {
+  font-family: $base-font;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: $titel-text-color;
+}
+
+// .form {
+//   @media screen and (min-width: $desctop) {
+//     width: 448px;
+//   }
+// }
+
+.form-field {
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-svg {
+  position: absolute;
+  top: 32px;
+  left: 17px;
+
+  transition: $animation;
+}
+
+.form-field label {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+}
+
+input,
+textarea {
+  outline: 0;
+}
+
+.form-text {
+  @extend %input-text-stile;
+  padding: 12px 16px 12px 16px;
+  &:focus {
+    border: 1px solid $accent-color;
+    cursor: pointer;
+  }
+}
+
+.form-input {
+  @extend %input-text-stile;
+  &:focus {
+    border: 1px solid $accent-color;
+    cursor: pointer;
+  }
+  &:focus + .modal-svg {
+    fill: $accent-color;
+  }
+}
+
+/* Альтернатива фокусу svg в формі
+.form-field:focus-within {
+  fill: var(--accent-color);
+} */
+
+/* Кастомний чекбокс */
+.form-check {
+  margin-top: 20px;
+
+  @media screen and (min-width: $desctop) {
+    margin-left: 10px;
+    margin-right: 6px;
+  }
+}
+
+.check-icon {
+  position: relative;
+  top: 2px;
+  left: 0;
+
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid $titel-text-color;
+  border-radius: 4px;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .check-field:checked + & {
+    border-color: $accent-color;
+    background-color: $accent-color;
+    background-image: url(../images/icon_check.svg);
+    background-size: contain;
+    background-origin: border-box;
+  }
+}
+
+.check-field {
+  position: absolute;
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
+
+  left: -9999px;
+  visibility: hidden;
+}
+
+::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+}
+
+textarea {
+  resize: none;
+}
+
+.agreement-linc {
+  color: $accent-color;
+}
+
+.submit {
+  margin-top: 30px;
+  margin-left: 123px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.agreement {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.7;
+
+  @media screen and (min-width: $desctop) {
+    font-size: 14px;
+  }
+}

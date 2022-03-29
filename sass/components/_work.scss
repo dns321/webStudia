@@ -1,0 +1,45 @@
+/*Стилі робіт*/
+
+.hidden {
+  @media screen and (max-width: 1599px) {
+    display: none;
+  }
+}
+
+.work-list {
+  display: flex;
+  margin: -15px;
+}
+
+.work-list-items {
+  position: relative;
+  margin: 15px;
+
+  width: calc((100% - (6 * 15px) / 3));
+}
+
+.work-list-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  text-align: center;
+  color: $secondary-color;
+
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  background: $bg-text;
+}
+
+.work-list-img {
+  display: block;
+  width: 100%;
+}
