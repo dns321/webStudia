@@ -1,41 +1,45 @@
+const list = document.querySelector(".filter"),
+  items = document.querySelectorAll(".works-item"),
+  listItems = document.querySelectorAll(".filter-item");
 
-const refs={
-    Filter: document.querySelector(".filter"),
-    ElWeb: document.querySelectorAll(".web"),
-    ElApp: document.querySelectorAll(".app"),
-    ElDes: document.querySelectorAll(".des"),
-    ElMar: document.querySelectorAll(".mar")
-}
+function filter() {
+  list.addEventListener("click", (event) => {
+    const targetFilter = event.target.dataset.filter;
+    const target = event.target;
 
-refs.Filter.addEventListener("click", filterElement);
+    // if (target.classList.contains("filter-item")) {
+    // listItems.forEach((listItem) => listItem.classList.remove("active"));
+    // target.classList.add("active");
+    // }
 
-function filterElement(event){
-    let filter = event.target.dataset.filter;
-    if (filter === "all"){
-        refs.ElWeb.forEach(element => element.classList.remove("is-none"));
-        refs.ElApp.forEach(element => element.classList.remove("is-none"));
-        refs.ElDes.forEach(element => element.classList.remove("is-none"));
-        refs.ElMar.forEach(element => element.classList.remove("is-none"));
-    } if (filter === "web"){
-        refs.ElWeb.forEach(element => element.classList.remove("is-none"));
-        refs.ElApp.forEach(element => element.classList.add("is-none"));
-        refs.ElDes.forEach(element => element.classList.add("is-none"));
-        refs.ElMar.forEach(element => element.classList.add("is-none"));
-    } if (filter === "app"){
-        refs.ElApp.forEach(element => element.classList.remove("is-none"));
-        refs.ElWeb.forEach(element => element.classList.add("is-none"));
-        refs.ElDes.forEach(element => element.classList.add("is-none"));
-        refs.ElMar.forEach(element => element.classList.add("is-none"));
-    } if (filter === "des"){
-        refs.ElDes.forEach(element => element.classList.remove("is-none"));
-        refs.ElWeb.forEach(element => element.classList.add("is-none"));
-        refs.ElApp.forEach(element => element.classList.add("is-none"));
-        refs.ElMar.forEach(element => element.classList.add("is-none"));
-    } if (filter === "mar"){
-        refs.ElMar.forEach(element => element.classList.remove("is-none"));
-        refs.ElWeb.forEach(element => element.classList.add("is-none"));
-        refs.ElApp.forEach(element => element.classList.add("is-none"));
-        refs.ElDes.forEach(element => element.classList.add("is-none"));
+    switch (targetFilter) {
+      case "all":
+        getItems("works-item");
+        break;
+      case "web":
+        getItems(targetFilter);
+        break;
+      case "app":
+        getItems(targetFilter);
+        break;
+      case "des":
+        getItems(targetFilter);
+        break;
+      case "mar":
+        getItems(targetFilter);
+        break;
     }
+  });
 }
 
+filter();
+
+function getItems(className) {
+  items.forEach((item) => {
+    if (item.classList.contains(className)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
